@@ -544,7 +544,7 @@
 				<plugin>
     <groupId>net.masterthought</groupId>
     <artifactId>maven-cucumber-reporting</artifactId>
-    <version>4.2.3</version>
+    <version>3.8.0</version>
     <executions>
         <execution>
             <id>execution</id>
@@ -555,8 +555,10 @@
             <configuration>
                 <projectName>eLead CRM Testing</projectName>
                 <!-- output directory for the generated report -->
-                <outputDirectory>${project.build.directory}/cucumber-maven-report</outputDirectory>
-                <inputDirectory>${project.build.directory}/cucumber-json</inputDirectory>
+                <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+                <inputDirectory>target/cucumber-reports/CucumberTestReport.json</inputDirectory>
+                  <buildNumber>1</buildNumber>
+                            <parallelTesting>false</parallelTesting>
                 <jsonFiles>
                     <!-- supports wildcard or name pattern -->
                     <param>**/*.json</param>
