@@ -23,8 +23,19 @@ import mantisutil.ConnectMantis;
 @CucumberOptions(
 		monochrome = true,
 		features = "classpath:features",
-		plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"},
+				plugin = {"pretty",
+		                "html:target/cucumber-reports/cucumber-pretty",
+		                "json:target/cucumber-reports/CucumberTestReport.json",
+		                "rerun:target/cucumber-reports/rerun.txt"},
+//		plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"},
 		tags = {"@smoke"}
+		/*
+		 *  "pretty",
+                "html:target/cucumber-reports/cucumber-pretty",
+                "json:target/cucumber-reports/CucumberTestReport.json",
+                "rerun:target/cucumber-reports/rerun.txt"
+
+		 */
 		)
 public class RunCukesTest extends AbstractTestNGCucumberTests{
 	
