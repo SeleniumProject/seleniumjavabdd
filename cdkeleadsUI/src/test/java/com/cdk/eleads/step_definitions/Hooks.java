@@ -20,7 +20,7 @@ public class Hooks {
 	String pathForLogger;
 	String testCaseDescription;
 
-	@Before("@ELSALES_427")
+	@Before("@smoke")
 	public void beforeMethodAmazon(Scenario scenario) {
 
 		if (scenario.getName().contains("_"))
@@ -137,7 +137,7 @@ public class Hooks {
 		GlobalUtil.setMDriver(DriverUtil.getMobileApp());
 	}
 
-	@After("@ELSALES_427")
+	@After("@smoke")
 	public void afterMethodSmoke(Scenario scenario) {
 		String testName = scenario.getName().split("_")[0].trim();
 		if (scenario.isFailed()) {

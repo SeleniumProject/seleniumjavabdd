@@ -24,7 +24,7 @@ import mantisutil.ConnectMantis;
 		monochrome = true,
 		features = "classpath:features",
 		plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"},
-		tags = {"@ELSALES_427"}
+		tags = {"@smoke"}
 		)
 public class RunCukesTest extends AbstractTestNGCucumberTests{
 	
