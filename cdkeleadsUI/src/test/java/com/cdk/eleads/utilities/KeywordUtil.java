@@ -425,10 +425,11 @@ public class KeywordUtil extends GlobalUtil {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public static String getElementText(By locator) throws InterruptedException {
+	public static String getElementText(By locator, String logStep) throws InterruptedException {
 		KeywordUtil.lastAction = "Get Element text: " + locator.toString();
 		LogUtil.infoLog(KeywordUtil.class, KeywordUtil.lastAction);
 		WebElement elm = waitForClickable(locator);
+		RunCukesTest.logger.log(LogStatus.PASS, HTMLReportUtil.passStringGreenColor(logStep));
 		return elm.getText().trim();
 	}
 
@@ -603,6 +604,19 @@ public class KeywordUtil extends GlobalUtil {
 	}
 	public static void sendKeysWithCommand(By locator, Keys command) {
 		getDriver().findElement(locator).sendKeys(command);
+	}
+	
+	public static void clickOnElementWithText(String value, String logStep) throws InterruptedException {
+		Thread.sleep(2000);
+		LogUtil.infoLog(KeywordUtil.class, KeywordUtil.lastAction);
+		WebElement ele = getDriver().findElement(By.xpath("//a[text()='"+value+"']"));
+		System.out.println("----------------------------------------getText-------------------------------------------");
+		System.out.println(ele.toString());
+		System.out.println(ele.getText());
+		System.out.println("----------------------------------------getText----------------------------------------");
+		getDriver().findElement(By.xpath("//a[text()='"+value+"']")).click();
+		RunCukesTest.logger.log(LogStatus.PASS, HTMLReportUtil.passStringGreenColor(logStep));
+		
 	}
 	/**
 	 * @param locator
@@ -896,10 +910,8 @@ public class KeywordUtil extends GlobalUtil {
 
 	public static void clickElementFromList(By locator, String value, String logStep) throws Exception {
 		Actions act = new Actions(getDriver());
-		Thread.sleep(6500);
+		Thread.sleep(2000);
 		WebElement element = findWithFluintWait(locator);
-
-		boolean flag = false;
 		KeywordUtil.lastAction = "Select value by text from the list : " + value + " - " + locator.toString();
 		LogUtil.infoLog(KeywordUtil.class, KeywordUtil.lastAction);
 
@@ -908,7 +920,7 @@ public class KeywordUtil extends GlobalUtil {
 		for (WebElement webElement : options) {
 			System.out.println("Get list of Dash Board Elements : " + webElement.getText());
 			if (webElement.getText().trim().contains(value)) {
-				System.out.println("LIST OF ELEMENTS FROM MY APPS PAGE : " + webElement.getText());
+				System.out.println("LIST OF ELEMENTS FROM: " + webElement.getText());
 				act.moveToElement(webElement).build().perform();
 				act.click().build().perform();
 				RunCukesTest.logger.log(LogStatus.PASS, HTMLReportUtil.passStringGreenColor(logStep));
@@ -918,9 +930,9 @@ public class KeywordUtil extends GlobalUtil {
 	}
 
 	public static void switchToFrame(int index) throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List<WebElement> frameCount = getDriver().findElements(By.tagName("iframe"));
-		System.out.println(frameCount.size() + " Frame Counts");
+		System.out.println("---------------------"+frameCount.size() + " Frame Counts---------------------");
 		getDriver().switchTo().frame(index);
 	}
 
@@ -976,7 +988,7 @@ public class KeywordUtil extends GlobalUtil {
 
 	public static boolean selectHTMLContainerPanelFromList(By locator, String value, String logStep) throws Exception {
 		Actions act = new Actions(getDriver());
-		Thread.sleep(6500);
+		Thread.sleep(2000);
 		WebElement element = findWithFluintWait(locator);
 
 		boolean flag = false;

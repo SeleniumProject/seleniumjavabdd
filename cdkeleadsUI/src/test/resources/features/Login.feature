@@ -1,7 +1,7 @@
-Feature: eLeads Automation
+Feature: eLeads ui Testing
 
-  @ELSALES_398
-  Scenario Outline: validate the adding newsletter
+  @ELSALES_398 @smoke @login
+  Scenario Outline: Login verification
     Given Read the test data  "<TestData>" from Excel file
     When User navigate to site url
     When I Enter the user name
@@ -11,10 +11,9 @@ Feature: eLeads Automation
 
     Examples: 
       | TestData  |
-      | TestData1 |   
-    
+      | TestData1 |
 
-  @ELSALES_427 @TFS-2342 @NotReady
+  @ELSALES_427 @Regression @smoke
   Scenario Outline: Validate the basic regression test on eLeads
     Given Read the test data  "<TestData>" from Excel file
     When User navigate to site url
@@ -48,6 +47,25 @@ Feature: eLeads Automation
     When I Click on Send button
     And I CLick on DeskLog link on left side of the page
     Then User verify the Customer is now on the desklog for today
+
+    Examples: 
+      | TestData  |
+      | TestData1 |
+
+  @ELSALES_409 @Reports @smoke
+  Scenario Outline: CRM - Reg - Reports
+    Given Read the test data  "<TestData>" from Excel file
+    When User navigate to site url
+    When I Enter the user name
+    And I Enter the Password
+    When I Click on Login button
+    Then Validate login successfull and check the dashboard title
+    When Click on Reports
+    And Click All in list of reports
+    When Click on Core Performance link
+    And I click on Daily Managers (Daily doc) link from reports
+    When I Click on Display report
+    Then Validate the Daily Report manager displayed
 
     Examples: 
       | TestData  |

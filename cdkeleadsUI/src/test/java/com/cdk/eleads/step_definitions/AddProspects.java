@@ -8,6 +8,7 @@ import org.testng.Assert;
 import com.cdk.eleads.pages.DashBoardPage;
 import com.cdk.eleads.pages.LoginPage;
 import com.cdk.eleads.pages.ProspectPage;
+import com.cdk.eleads.pages.ReportsPage;
 import com.cdk.eleads.utilities.ExcelDataUtil;
 import com.cdk.eleads.utilities.GlobalUtil;
 import com.cdk.eleads.utilities.KeywordUtil;
@@ -54,13 +55,15 @@ public class AddProspects extends KeywordUtil {
 	@When("^I Enter the user name$")
 	public void i_Enter_the_user_name() throws Throwable {
 
-		KeywordUtil.inputText(LoginPage.usernametxt, dataMap.get("username"),	LoginPage.usernm + " : " + dataMap.get("username"));
+		KeywordUtil.inputText(LoginPage.usernametxt, dataMap.get("username"),
+				LoginPage.usernm + " : " + dataMap.get("username"));
 	}
 
 	@When("^I Enter the Password$")
 	public void i_Enter_the_Password() throws Throwable {
 
-		KeywordUtil.inputText(LoginPage.passwordtxt, dataMap.get("password"), LoginPage.passwordnm + " : " + dataMap.get("password"));
+		KeywordUtil.inputText(LoginPage.passwordtxt, dataMap.get("password"),
+				LoginPage.passwordnm + " : " + dataMap.get("password"));
 
 	}
 
@@ -133,21 +136,25 @@ public class AddProspects extends KeywordUtil {
 	@When("^Enter the Address details Zip and click on house button select city$")
 	public void enter_the_Address_details_Zip_and_click_on_house_button_select_city() throws Throwable {
 
-	//	KeywordUtil.inputText(DashBoardPage.street1, "Florida", "Enter the Street 1 ");
-	//	KeywordUtil.inputText(DashBoardPage.stree2, "Demonte Colony", "Enter the Street 2 ");
-	//	KeywordUtil.inputText(DashBoardPage.zip, "10001", "Enter the Street 2 ");
-	//	Thread.sleep(2500);
-	//	KeywordUtil.click(ProspectPage.ziphome, "Click on House button for Pincode");
-	//	Thread.sleep(1500);
-	//	KeywordUtil.selectBasedOnIndex(ProspectPage.countryselectionpopup, 0, "Select the NewYork City");
+		// KeywordUtil.inputText(DashBoardPage.street1, "Florida", "Enter the Street 1
+		// ");
+		// KeywordUtil.inputText(DashBoardPage.stree2, "Demonte Colony", "Enter the
+		// Street 2 ");
+		// KeywordUtil.inputText(DashBoardPage.zip, "10001", "Enter the Street 2 ");
+		// Thread.sleep(2500);
+		// KeywordUtil.click(ProspectPage.ziphome, "Click on House button for Pincode");
+		// Thread.sleep(1500);
+		// KeywordUtil.selectBasedOnIndex(ProspectPage.countryselectionpopup, 0, "Select
+		// the NewYork City");
 	}
 
 	@When("^Enter the Phone number along with primary email address$")
 	public void enter_the_Phone_number_along_with_primary_email_address() throws Throwable {
 		Thread.sleep(1000);
-	//	KeywordUtil.inputText(ProspectPage.phonenumber, "212-2232", "Enter Phone number");
+		// KeywordUtil.inputText(ProspectPage.phonenumber, "212-2232", "Enter Phone
+		// number");
 		Thread.sleep(2500);
-//		KeywordUtil.acceptAlert();
+		// KeywordUtil.acceptAlert();
 		Thread.sleep(1000);
 		KeywordUtil.inputText(ProspectPage.primaryemail, "ramesh.kudikala@cdk.com", "Enter the Primary Email Address");
 		Thread.sleep(8000);
@@ -191,8 +198,9 @@ public class AddProspects extends KeywordUtil {
 		KeywordUtil.click(ProspectPage.changecurrentactivity, "Click on current activity");
 		Thread.sleep(1500);
 		KeywordUtil.getWindowsHandles();
-	
-		KeywordUtil.selectValueFromDropDown(ProspectPage.switchtocurrenttaskdrp, "Send Email", "Select Send Email /Letter value from drop down");
+
+		KeywordUtil.selectValueFromDropDown(ProspectPage.switchtocurrenttaskdrp, "Send Email",
+				"Select Send Email /Letter value from drop down");
 		KeywordUtil.click(ProspectPage.submitbtn, "Click on save button");
 		Thread.sleep(2000);
 		KeywordUtil.getWindowsHandles();
@@ -203,24 +211,26 @@ public class AddProspects extends KeywordUtil {
 
 	@When("^I Click on Schedule at the top of the Opportunity$")
 	public void i_Click_on_Schedule_at_the_top_of_the_Opportunity() throws Throwable {
-		
-             //  KeywordUtil.click(ProspectPage.schedulemenu, "Click on Schedule button");
+
+		// KeywordUtil.click(ProspectPage.schedulemenu, "Click on Schedule button");
 	}
 
 	@When("^I Click on Schedule Task of Send Email /Letter  and click on Schedule$")
 	public void i_Click_on_Schedule_Task_of_Send_Email_Letter_and_click_on_Schedule() throws Throwable {
-		//KeywordUtil.getWindowsHandles();
-	//	KeywordUtil.selectValueFromDropDown(ProspectPage.taskdropdown, "Send Email/Letter", "Select the send Email /Letter option");
-	//	KeywordUtil.inputText(ProspectPage.schedulcontactcomments, "Testing Comments", "Enter the Comments in Schedule contacts");
-		
-	//	KeywordUtil.click(ProspectPage.schedulebtn, "Click on Scheduel menu");
-		//KeywordUtil.getWindowsHandles();
+		// KeywordUtil.getWindowsHandles();
+		// KeywordUtil.selectValueFromDropDown(ProspectPage.taskdropdown, "Send
+		// Email/Letter", "Select the send Email /Letter option");
+		// KeywordUtil.inputText(ProspectPage.schedulcontactcomments, "Testing
+		// Comments", "Enter the Comments in Schedule contacts");
+
+		// KeywordUtil.click(ProspectPage.schedulebtn, "Click on Scheduel menu");
+		// KeywordUtil.getWindowsHandles();
 	}
 
 	@When("^Click on Complete on Send Email / Letter task$")
 	public void click_on_Complete_on_Send_Email_Letter_task() throws Throwable {
 
-	 //  KeywordUtil.click(ProspectPage.sendEmailMenu, "Click on Email Menu Item");
+		// KeywordUtil.click(ProspectPage.sendEmailMenu, "Click on Email Menu Item");
 	}
 
 	@When("^I CLick on Send Email in Process Activity Page$")
@@ -231,9 +241,9 @@ public class AddProspects extends KeywordUtil {
 
 	@When("^I Add Email Address in To: Field$")
 	public void i_Add_Email_Address_in_To_Field() throws Throwable {
-		
+
 		KeywordUtil.inputText(ProspectPage.toAddress, "rkudikala83@gmail.com", "Enter the To Email Address");
-		
+
 	}
 
 	@When("^I Enter the comments, subject and Body of the message$")
@@ -247,7 +257,7 @@ public class AddProspects extends KeywordUtil {
 
 	@When("^I Click on Send button$")
 	public void i_Click_on_Send_button() throws Throwable {
-		
+
 		KeywordUtil.click(ProspectPage.sendEmailbtn, "Click on Send Email Button");
 	}
 
@@ -259,6 +269,41 @@ public class AddProspects extends KeywordUtil {
 	@Then("^User verify the Customer is now on the desklog for today$")
 	public void user_verify_the_Customer_is_now_on_the_desklog_for_today() throws Throwable {
 
+	}
+
+	@When("^Click on Reports$")
+	public void click_on_Reports() throws Throwable {
+		
+		KeywordUtil.clickElementFromList(DashBoardPage.menuItem, "Reports", "Click on Reports Menu");
+	}
+
+	@When("^Click All in list of reports$")
+	public void click_All_in_list_of_reports() throws Throwable {
+		KeywordUtil.clickElementFromList(DashBoardPage.submenuitem, "All", "Click on All Submenu");
+	}
+
+	@When("^Click on Core Performance link$")
+	public void click_on_Core_Performance_link() throws Throwable {
+		KeywordUtil.clickElementFromList(DashBoardPage.submenuitem, "Core Performance", "Click on Core Performance");
+	}
+
+	@When("^I click on Daily Managers \\(Daily doc\\) link from reports$")
+	public void i_click_on_Daily_Managers_Daily_doc_link_from_reports() throws Throwable {
+		KeywordUtil.switchToFrame(0);
+		KeywordUtil.clickOnElementWithText("Daily Managers (Daily Doc)", "Click on Daily Managers (Daily Doc) link ");
+	}
+
+	@When("^I Click on Display report$")
+	public void i_Click_on_Display_report() throws Throwable {
+           KeywordUtil.click(ReportsPage.displayreportbtn, "Click on Display Report button");
+		
+	}
+
+	@Then("^Validate the Daily Report manager displayed$")
+	public void validate_the_Daily_Report_manager_displayed() throws Throwable {
+
+		String actual = KeywordUtil.getElementText(ReportsPage.dailyreportmanagerlable, "Validate the Daily report manager");
+		Assert.assertEquals(actual, "Daily Managers Report");
 	}
 
 }
