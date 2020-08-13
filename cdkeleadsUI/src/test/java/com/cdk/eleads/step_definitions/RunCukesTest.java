@@ -24,9 +24,9 @@ import mantisutil.ConnectMantis;
 		monochrome = true,
 		features = "classpath:features",
 				plugin = {"pretty",
-		                "html:target/cucumber-reports/cucumber-pretty",
-		                "json:target/cucumber-reports/CucumberTestReport.json",
-		                "rerun:target/cucumber-reports/rerun.txt"},
+						"html:target/cucumber-html-report", "json:target/cucumber.json",
+						 "pretty:target/cucumber-pretty.txt","usage:target/cucumber-usage.json", 
+						"junit:target/cucumber-results.xml"},
 //		plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"},
 		tags = {"@smoke"}
 		/*

@@ -9,17 +9,12 @@ This is a template project that you can use to start with cucumber-jvm and selen
 [Intermediate Tutorial](http://www.seleniumframework.com/cucumber-jvm-3/parameterize-browser/)  
 [Advanced Tutorial/Frameworks](http://www.seleniumframework.com/cucumber-jvm-3/what-are-frameworks/)
 
-
-# Salmon Raj Comments:
-- Changed Default Timeout From 20 - 60s
-
-Challenges:
-- Drag and drop
-- Successfull insert record validation
-- Login reusable method
-- cucumber result
-  
-  -- Remove the html container from iframe - Automation not able to handle
-  -- 
-  
-
+# Action Item - 13/08/20
+- Scroll automate
+- PPT - to compare with selenium & BlazeMeter
+- Challenges from BlazeMeter (Iframe, Scroll, multiple windows, not able to perform full action on link in this application)
+- Not able to text in few edit boxes in eLeads.- Blazemeter
+- some times script is executing which is already recorded and placed in the existing work space
+- No Proper support, if you face any issue in blazemeter, supporting is getting delayed from blazemeter team. for fixing issues they probably need our blazemeter cred and application access to fix the issue, but this is comes under security policies
+- 
+-  
